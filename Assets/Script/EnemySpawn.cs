@@ -33,7 +33,7 @@ public class EnemySpawn : MonoBehaviour
                     // Instantiate an enemy prefab at the starting waypoint
                     Instantiate(currentWave.GetEnemyPrefabs(i),
                         currentWave.GetStartingWayPoint().position,
-                    Quaternion.identity, // Set the rotation to the default rotation
+                    Quaternion.Euler(0,0,180), 
                     this.transform);
                     yield return new WaitForSeconds(currentWave.GetRandomSpawnTime());
                 }
